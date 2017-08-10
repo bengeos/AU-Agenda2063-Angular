@@ -1,32 +1,23 @@
-<nav class="navbar-default navbar-static-side" role="navigation">
-    <div class="sidebar-collapse">
+<nav class="navbar-default navbar-static-side" role="navigation" ng-controller="LogInCtrl">
+    <div class="sidebar-collapse ">
         <ul side-navigation class="nav metismenu" id="side-menu">
-            <li class="nav-header">
 
-                <div class="profile-element" uib-dropdown>
-                    <a uib-dropdown-toggle href>
-                            <span class="clear">
-                                <span class="block m-t-xs">
-                                    <strong class="font-bold">{{main.userName}}</strong>
-                             </span>
-                                <span class="text-muted text-xs block">Example menu<b class="caret"></b></span>
-                            </span>
-                    </a>
-                    <ul uib-dropdown-menu class="animated flipInX m-t-xs">
-                        <li><a href="">Logout</a></li>
-                    </ul>
-                </div>
-                <div class="logo-element">
-                    IN+
-                </div>
+            <li class="nav-header center" >
+                <md-button class="md-raised md-fab">{{user_stage}}</md-button>
 
+                <p style="color: #ffffff"> Welcome, {{user_name}} </p>
             </li>
 
-            <li ui-sref-active="active">
-                <a ui-sref="index.main"><i class="fa fa-laptop"></i> <span class="nav-label">Main page</span> </a>
+
+
+            <li ui-sref-active="active" ng-show="isMentee">
+                <a ui-sref="neophyte.mentor"><i class="fa fa-male"></i> <span class="nav-label">Mentors</span> </a>
+            </li>
+            <li ui-sref-active="active" ng-show="isMentor">
+                <a ui-sref="neophyte.mentee"><i class="fa fa-male"></i> <span class="nav-label">Mentee</span> </a>
             </li>
             <li ui-sref-active="active">
-                <a ui-sref="index.minor"><i class="fa fa-desktop"></i> <span class="nav-label">Minor page</span></a>
+                <a ui-sref="neophyte.profile"><i class="fa fa-laptop"></i> <span class="nav-label">Profile</span> </a>
             </li>
         </ul>
 

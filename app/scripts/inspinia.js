@@ -1,9 +1,3 @@
-/**
- * INSPINIA - Responsive Admin Theme
- * 2.6.2
- *
- * Custom scripts
- */
 
 $(document).ready(function () {
 

@@ -1,20 +1,16 @@
-/**
- * INSPINIA - Responsive Admin Theme
- *
- */
-
 
 /**
  * pageTitle - Directive for set Page title - mata title
  */
+
 function pageTitle($rootScope, $timeout) {
     return {
         link: function(scope, element) {
             var listener = function(event, toState, toParams, fromState, fromParams) {
                 // Default title - load on Dashboard 1
-                var title = 'INSPINIA | Responsive Admin Theme';
+                var title = 'Neophyte';
                 // Create your own title pattern
-                if (toState.data && toState.data.pageTitle) title = 'INSPINIA | ' + toState.data.pageTitle;
+                if (toState.data && toState.data.pageTitle) title = 'Neophyte | ' + toState.data.pageTitle;
                 $timeout(function() {
                     element.text(title);
                 });
@@ -154,7 +150,7 @@ function iboxToolsFullScreen($timeout) {
  * Pass all functions into module
  */
 angular
-    .module('inspinia')
+    .module('neophyte')
     .directive('pageTitle', pageTitle)
     .directive('sideNavigation', sideNavigation)
     .directive('iboxTools', iboxTools)

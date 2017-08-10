@@ -1,20 +1,23 @@
-/**
- * INSPINIA - Responsive Admin Theme
- *
- */
 
-/**
- * MainCtrl - controller
- */
 function MainCtrl() {
 
-    this.userName = 'Example user';
-    this.helloText = 'Welcome in SeedProject';
-    this.descriptionText = 'It is an application skeleton for a typical AngularJS web app. You can use it to quickly bootstrap your angular webapp projects and dev environment for these projects.';
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyC0AY-Sz_QSfkkcQPgJxczAaJh-GoOIPDI",
+        authDomain: "neophyte-sample.firebaseapp.com",
+        databaseURL: "https://neophyte-sample.firebaseio.com",
+        projectId: "neophyte-sample",
+        storageBucket: "neophyte-sample.appspot.com",
+        messagingSenderId: "660363107196"
+    };
 
+    firebase.initializeApp(config);
+
+    console.log("Main Ctrl Loaded");
 };
-
-
 angular
-    .module('inspinia')
+    .module('neophyte')
     .controller('MainCtrl', MainCtrl)
+    .run(function($rootScope, $state) {
+        $rootScope.$state = $state;
+    });

@@ -1,10 +1,10 @@
-/**
- * INSPINIA - Responsive Admin Theme
- *
- */
+
 (function () {
-    angular.module('inspinia', [
+    angular.module('neophyte', [
         'ui.router',                    // Routing
-        'ui.bootstrap'                 // Bootstrap
+        'ui.bootstrap',                 // Bootstrap
+        'ngMaterial',
+        'ui.select',                   // angualjs ng-matrial
+
     ])
 })();

@@ -1,0 +1,84 @@
+<div class="text-center animated fadeInDown gray-bg" ng-controller="LogInCtrl">
+
+
+    <md-toolbar style="background: rgba(19, 35, 47, 0.9)">
+        <div class="md-toolbar-tools">
+            <span>Neophyte App</span>
+            <span flex></span>
+
+            <a ng-click="showAbout($event)">About us</a>
+            <span style="display: inline-block; width: 2ch;">&#9;</span>
+            <a ng-click="showContact($event)">Contact us</a>
+
+        </div>
+    </md-toolbar>
+
+        <br/>
+    <div class="form">
+
+        <ul class="tab-group" ng-show="login">
+            <li class="tab active"><a ng-click="changeToLogin()">Log In </a></li>
+            <li class="tab"><a ng-click="changeToSignup()">Sign Up </a></li>
+        </ul>
+
+        <ul class="tab-group" ng-show="signup">
+            <li class="tab"><a ng-click="changeToLogin()">Log In </a></li>
+            <li class="tab active"><a ng-click="changeToSignup()">Sign Up </a></li>
+        </ul>
+
+            <div ng-show="login">
+                <h2>Welcome Neophyte</h2>
+                <br/>
+                <form>
+
+                    <div class="field-wrap">
+                        <input placeholder="Email" ng-model="User.Email" type="text"required autocomplete="off"/>
+                    </div>
+
+                    <div class="field-wrap">
+                        <input placeholder="Password" ng-model="User.Password" type="Password" required autocomplete="off"/>
+                    </div>
+                    <md-button class="button button-block" ng-click="userSignIn(User)" >Log In </md-button>
+
+                </form>
+
+            </div>
+
+            <div ng-show="signup">
+                <h2>Sign Up now</h2>
+                <br/>
+
+                <form>
+
+                    <div class="row">
+                        <div class="col-sm-6 field-wrap">
+                            <input placeholder="First Name" ng-model="User.FirstName" type="text" required autocomplete="off" />
+                        </div>
+
+                        <div class="col-sm-6 field-wrap">
+                            <input placeholder="Last Name" ng-model="User.LastName" type="text"required autocomplete="off"/>
+                        </div>
+                    </div>
+
+                    <div class="field-wrap">
+                        <input placeholder="Email" ng-model="User.Email" type="text"required autocomplete="off"/>
+                    </div>
+
+                    <div class="field-wrap">
+                        <input placeholder="Password"  ng-model="User.Password" type="Password" required autocomplete="off"/>
+                    </div>
+
+                    <md-button class="button button-block" ng-click="SignUpTest(User)"/>Sign up </md-button>
+
+                </form>
+
+            </div>
+
+    </div> <!-- /form -->
+
+
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+</div>

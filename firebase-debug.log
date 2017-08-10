@@ -1,0 +1,36 @@
+[debug] [2017-07-27T09:45:45.569Z] ----------------------------------------------------------------------
+[debug] [2017-07-27T09:45:45.572Z] Command:      C:\Program Files (x86)\nodejs\node.exe C:\Users\Roger\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
+[debug] [2017-07-27T09:45:45.572Z] CLI Version:  3.9.1
+[debug] [2017-07-27T09:45:45.573Z] Platform:     win32
+[debug] [2017-07-27T09:45:45.573Z] Node Version: v4.4.7
+[debug] [2017-07-27T09:45:45.574Z] Time:         Thu Jul 27 2017 12:45:45 GMT+0300 (E. Africa Standard Time)
+[debug] [2017-07-27T09:45:45.574Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2017-07-27T09:45:45.587Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2017-07-27T09:45:45.587Z] > authorizing via signed-in user
+[debug] [2017-07-27T09:45:45.590Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2017-07-27T09:45:45.590Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token { refresh_token: '1/On_zJmVkT_2YzPGULvvyKcibQIMZbkNvFY5isLW5NRS0jPI3ff-hLGocsxJ8c6pi',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Thu Jul 27 2017 12:45:45 GMT+0300 (E. Africa Standard Time)
+[debug] [2017-07-27T09:45:46.405Z] <<< HTTP RESPONSE 200
+[debug] [2017-07-27T09:45:46.484Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/ethiopian-god-channel  
+ Thu Jul 27 2017 12:45:46 GMT+0300 (E. Africa Standard Time)
+[debug] [2017-07-27T09:45:48.006Z] <<< HTTP RESPONSE 200
+[debug] [2017-07-27T09:45:48.008Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/ethiopian-god-channel/tokens  
+ Thu Jul 27 2017 12:45:48 GMT+0300 (E. Africa Standard Time)
+[debug] [2017-07-27T09:45:48.835Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'E:\Projects\ZOE\EthiopianGodChannel-Web'...
+[info] 
+[debug] [2017-07-27T09:45:48.848Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/ethiopian-god-channel  
+ Thu Jul 27 2017 12:45:48 GMT+0300 (E. Africa Standard Time)
+[debug] [2017-07-27T09:45:50.717Z] <<< HTTP RESPONSE 200
+[debug] [2017-07-27T09:45:50.719Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/170626859881/clients/_:getWebAppConfig  
+ Thu Jul 27 2017 12:45:50 GMT+0300 (E. Africa Standard Time)
+[debug] [2017-07-27T09:45:51.853Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: dist
+[info] +  hosting: Local server: http://localhost:5000
+

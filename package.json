@@ -1,7 +1,7 @@
 {
-  "name": "INSPINIA",
+  "name": "godchannel",
   "version": "2.6.2",
-  "description": "INSPINIA - Responsive Admin Theme",
+  "description": "Neophyte - Sample Project",
   "dependencies": {
     "grunt": "^0.4.5"
   },
@@ -18,9 +18,25 @@
     "grunt-contrib-uglify": "^0.6.0",
     "grunt-contrib-watch": "^0.6.1",
     "grunt-filerev": "^2.0.0",
+    "grunt-install-dependencies": "^0.2.0",
+    "grunt-run": "^0.6.0",
     "grunt-usemin": "^2.4.0",
     "jshint-stylish": "^1.0.0",
     "load-grunt-tasks": "^0.6.0",
     "time-grunt": "^1.0.0"
-  }
+  },
+  "main": "Gruntfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CruSea/GlobalStar_Web.git"
+  },
+  "author": "Roger",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CruSea/GlobalStar_Web/issues"
+  },
+  "homepage": "https://github.com/CruSea/GlobalStar_Web#readme"
 }

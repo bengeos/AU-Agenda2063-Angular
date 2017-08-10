@@ -1,34 +1,44 @@
-/**
- * INSPINIA - Responsive Admin Theme
- *
- * Inspinia theme use AngularUI Router to manage routing and views
- * Each view are defined as state.
- * Initial there are written stat for all view in theme.
- *
- */
+
 function config($stateProvider, $urlRouterProvider) {
-    $urlRouterProvider.otherwise("/index/main");
-
+    $urlRouterProvider.otherwise("/neophyte/mentor");
     $stateProvider
-
-        .state('index', {
+        .state('neophyte', {
             abstract: true,
-            url: "/index",
+            url: "/neophyte",
             templateUrl: "views/common/content.html",
         })
-        .state('index.main', {
-            url: "/main",
-            templateUrl: "views/main.html",
-            data: { pageTitle: 'Example view' }
+        .state('neophyte.mentor', {
+            url: "/mentor",
+            templateUrl: "views/mentor.html",
+            controller: 'MentorCtrl',
+            data: { pageTitle: 'Mentor' }
         })
-        .state('index.minor', {
-            url: "/minor",
-            templateUrl: "views/minor.html",
-            data: { pageTitle: 'Example view' }
+        .state('neophyte.mentee', {
+            url: "/mentee",
+            templateUrl: "views/mentee.html",
+            controller: 'MenteeCtrl',
+            data: { pageTitle: 'Mentee' }
+        })
+        .state('neophyte.profile', {
+            url: "/profile",
+            templateUrl: "views/profile.html",
+            controller: 'ProfileCtrl',
+            data: { pageTitle: 'Profile' }
+        })
+        .state('login', {
+            abstract: true,
+            url: "/user",
+            templateUrl: "views/login.html"
+        })
+        .state('login.signin', {
+            url: "/login",
+            templateUrl: "views/login.html",
+            controller: 'LogInCtrl',
+            data: { pageTitle: 'Log in' }
         })
 }
 angular
-    .module('inspinia')
+    .module('neophyte')
     .config(config)
     .run(function($rootScope, $state) {
         $rootScope.$state = $state;
