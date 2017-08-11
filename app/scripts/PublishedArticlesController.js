@@ -1,8 +1,8 @@
 
 angular
     .module('neophyte')
-    .controller('PublishedArticlesCtrl', function($scope,$timeout,$filter,$state, $rootScope) {
-        console.log("controller loaded");
+    .controller('PublishedArticlesCtrl', function($scope,$timeout,$filter,$state) {
+
         var user = firebase.auth().currentUser;
         if (!user) {
             console.log("Invalid user");
@@ -21,21 +21,18 @@ angular
         var NewsRef = databaseRef.child("published_articles");
         var storage = firebase.storage();
 
-        $scope.isAdmin = $rootScope.isAdmin;
         $scope.isAdding = true;
         $scope.image_url = "";
-        $scope.News = new Array();
+        $scope.PublishedArticles = new Array();
 
-        console.log("userId " + $rootScope.user_id);
-
-        NewsRef.child($rootScope.user_id).on('value', function (snapshot) {
-            $scope.News = new Array();
+        NewsRef.on('value', function (snapshot) {
+            $scope.PublishedArticles = new Array();
             $timeout(function () {
                 snapshot.forEach(function(childSnapshot) {
                     var parentKey = childSnapshot.key;
                     var childData = childSnapshot.val();
                     childData.ParentID = parentKey;
-                    $scope.News.push(childData);
+                    $scope.PublishedArticles.push(childData);
                 });
             });
         });
@@ -79,7 +76,7 @@ angular
                 newNews.newsimg = $scope.image_url;
 
                 console.log("Adding New News: ",newNews);
-                NewsRef.child($rootScope.user_id).push(newNews);
+                NewsRef.push(newNews);
                 progress_bar.value = 0;
                 $scope.News_Item = {};
             }
@@ -90,15 +87,15 @@ angular
 
             console.log("Adding New News: ",newNews);
             if(newNews.newsimg){
-                NewsRef.child($rootScope.user_id).child(newNews.ParentID).set(newNews);
+                NewsRef.child(newNews.ParentID).set(newNews);
             }
-
             $scope.News_Item = {};
         };
 
         $scope.removeNews = function (news) {
-            NewsRef.child($rootScope.user_id).child(news.ParentID).remove();
+            NewsRef.child(news.ParentID).remove();
             $scope.News_Item = {};
+            console.log("Remove Album",news);
         };
 
 

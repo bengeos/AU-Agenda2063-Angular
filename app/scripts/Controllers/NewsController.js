@@ -1,6 +1,4 @@
-/**
- * Created by bengeos on 1/19/17.
- */
+
 angular
     .module('neophyte')
     .controller('NewsCtrl', function($scope,$timeout,$filter,$state) {

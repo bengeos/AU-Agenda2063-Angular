@@ -7,6 +7,7 @@ angular
     .controller('LogInCtrl', function($scope, $location, $state, $rootScope,$mdDialog) {
         $scope.login = true;
         $scope.signup = false;
+        $scope.isAdmin = false;
 
         var database = firebase.database();
         var databaseRef = database.ref();
@@ -19,15 +20,8 @@ angular
                 getUserState(user.uid);
                 $rootScope.user_id = user.uid;
 
-                $state.go("neophyte.mentor");
+                $state.go("neophyte.news");
 
-               if($rootScope.isAdmin){
-                   $state.go("neophyte.mentor");
-
-               }
-               else if (!$rootScope.isAdmin){
-                   $state.go("neophyte.mentor");
-               }
             }
             else {
                 $state.go("login.signin");
@@ -42,24 +36,19 @@ angular
                 var userData =  snap.val();
 
                 $rootScope.user_name = userData.first_name;
-
+                $rootScope.user_id = snap.key;
 
                 if(userData.isAdmin){
                     $rootScope.isAdmin = true;
+                    $scope.isAdmin = true;
                 }
                 else{
                     $rootScope.isAdmin = false;
+                    $scope.isAdmin = false;
                 }
 
             }).then(function(){
 
-                if($rootScope.isAdmin){
-                    $state.go("neophyte.mentor");
-
-                }
-                else if (!$rootScope.isAdmin){
-                    $state.go("neophyte.mentor");
-                }
             });
         }
 
@@ -67,8 +56,6 @@ angular
             console.log(Users);
             const promise = firebase.auth().signInWithEmailAndPassword(Users.Email,Users.Password);
         };
-
-
 
         $scope.userSignUp = function(User){
 
@@ -80,9 +67,7 @@ angular
                         email: User.Email,
                         isAdmin: false
                     });
-
             });
-
         };
 
 

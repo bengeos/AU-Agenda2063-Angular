@@ -31,6 +31,18 @@ function config($stateProvider, $urlRouterProvider) {
             controller: 'NewsCtrl',
             data: { pageTitle: 'News' }
         })
+        .state('neophyte.publishedarticles', {
+            url: "/publishedarticles",
+            templateUrl: "views/publishedArticles.html",
+            controller: 'PublishedArticlesCtrl',
+            data: { pageTitle: 'Published Articles' }
+        })
+        .state('neophyte.unpublishedarticles', {
+            url: "/unpublishedarticles",
+            templateUrl: "views/unpublishedArticles.html",
+            controller: 'UnPublishedArticlesCtrl',
+            data: { pageTitle: 'UnPublished Articles' }
+        })
         .state('login', {
             abstract: true,
             url: "/user",

@@ -1,0 +1,205 @@
+<div class="wrapper wrapper-content" ng-controller="PublishedArticlesCtrl">
+    <div class="row">
+        <div class="col-lg-8 animated fadeIn">
+            <div class="mail-box-header">
+
+                <form  class="pull-right mail-search">
+                    <div class="input-group">
+                        <input type="text" class="form-control input-sm" ng-model="newsFilter" name="search" placeholder="Search for news">
+
+                        <div class="input-group-btn">
+                            <button type="button" class="btn btn-sm btn-primary">
+                                search
+                            </button>
+                        </div>
+                    </div>
+                </form>
+                <h2>
+                    Latest Articles
+                </h2>
+
+                <div class="mail-tools tooltip-demo m-t-md">
+                    <div class="btn-group pull-right">
+                        <button class="btn btn-white btn-sm"><i class="fa fa-arrow-left"></i></button>
+                        <button class="btn btn-white btn-sm"><i class="fa fa-arrow-right"></i></button>
+
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="overflow:scroll; height:500px; width:100%;">
+                <div class="col-lg-12 animated fadeIn">
+                    <div class="col-sm-4" ng-repeat="News_Item in News">
+                        <md-card>
+                            <img src="{{News_Item.articleimg}}" class="md-card-image" alt="" width="100px">
+                            <md-card-content>
+                                <h4 class="md-title">{{News_Item.articletitle}}</h4>
+
+                                <h5 class="md-title">Publisher</h5>
+                                <h4><small>{{News_Item.publisher}}</small></h4>
+
+                                <h5 class="md-title">Full Description</h5>
+                                <h4><small>{{News_Item.articledetail}}</small></h4>
+
+                                <h5 class="md-title">Location</h5><br>
+                                <h4><small>{{News_Item.location}}</small></h4>
+
+
+                                <h5>{{News_Item.time | date }}</h5>
+
+                            </md-card-content>
+                            <div class="btn-group pull-right">
+                                <button class="btn btn-white btn-sm" ng-click="deleteNews(News_Item)"><i class="fa fa-remove"></i></button>
+                                <button class="btn btn-white btn-sm" ng-click="editNews(News_Item)"><i class="fa fa-edit"></i></button>
+                                <button class="btn btn-white btn-sm"  ng-click="showConfirm($event, News_Item)"><i class="fa fa-thumbs-down"></i></button>
+
+                            </div>
+                        </md-card>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-lg-4 animated slideInRight fixed" ng-show="isDeleting">
+            <div class="ibox float-e-margins">
+                <div class="ibox-content">
+                    <h2 ng-show="!isEditing"> Delete News </h2>
+                    <p>
+                        Simple and easy way to delete news
+                    </p>
+                    <br><br>
+                    <div class="form-group">
+                        <label class="font-normal">News Title</label>
+                        <div class="input-group date">
+                            <input type="text" class="form-control" ng-model="News_Item.newstitle" placeholder="Type News Title Here">
+                            <span class="input-group-addon"><i class="fa fa-flag-o"></i></span>
+                        </div>
+                    </div>
+
+                    <button type="button" class="form-control btn-danger"  ng-click="removeNews(News_Item)" >Delete News</button>
+                    <br>
+                    <button type="button" class="form-control"  ng-click="cancelTask()" >Cancel</button>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4 animated slideInRight" ng-show="isEditing">
+            <div class="ibox float-e-margins">
+                <div class="ibox-content">
+                    <h2> Edit News </h2>
+                    <br><br>
+                    <div class="form-group">
+                        <label class="font-noraml">News Title</label>
+                        <div class="input-group date">
+                            <span class="input-group-addon">Title</span>
+                            <input type="text" class="form-control" ng-model="News_Item.newstitle" placeholder="Type News Title Here">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="font-noraml">Publisher</label>
+                        <div class="input-group date">
+                            <span class="input-group-addon">Publisher</span>
+                            <input type="text" class="form-control" ng-model="News_Item.publisher" placeholder="Type News Title Here">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="font-noraml">Location</label>
+                        <div class="input-group date">
+                            <span class="input-group-addon">Publisher</span>
+                            <input type="text" class="form-control" ng-model="News_Item.location" placeholder="Type News Title Here">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="font-noraml">News Description</label>
+                        <div class="input-group date">
+                            <span class="input-group-addon">Detail</span>
+                            <textarea class="form-control" ng-model="News_Item.newsdetail" rows="4"></textarea>
+                            <span class="input-group-addon"><i class="fa fa-flag-o"></i></span>
+                        </div>
+                    </div>
+
+
+
+                    <button type="button" class="form-control btn-danger"  ng-click="addEditedNews(News_Item)" >Save Changes</button>
+                    <br>
+                    <button type="button" class="form-control"  ng-click="cancelTask()" >Cancel</button>
+
+                </div>
+            </div>
+
+
+        </div>
+
+            <div class="col-lg-4 animated slideInRight" ng-show="isAdding">
+                <div class="col-md-12">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-content">
+                            <h2>
+                                Add New News
+                            </h2>
+
+
+
+                            <div class="form-group">
+                                <label class="font-noraml">News Title</label>
+                                <div class="input-group date">
+                                    <span class="input-group-addon">Title</span>
+                                    <input type="text" class="form-control" ng-model="News_Item.newstitle" placeholder="Type News Title Here">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="font-noraml">Publisher</label>
+                                <div class="input-group date">
+                                    <span class="input-group-addon">Publisher</span>
+                                    <input type="text" class="form-control" ng-model="News_Item.publisher" placeholder="Type News Title Here">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="font-noraml">Location</label>
+                                <div class="input-group date">
+                                    <span class="input-group-addon">Location</span>
+                                    <input type="text" class="form-control" ng-model="News_Item.location" placeholder="Type News Title Here">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="font-noraml">News Description</label>
+                                <div class="input-group date">
+                                    <span class="input-group-addon">Detail</span>
+                                    <textarea class="form-control" ng-model="News_Item.newsdetail" rows="4"></textarea>
+                                    <span class="input-group-addon"><i class="fa fa-flag-o"></i></span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="font-noraml">News Image</label>
+                                <div class="input-group date">
+                                    <span class="input-group-addon">Image</span>
+                                    <progress id="progress_bar" value="0.0" class="form-control"></progress>
+                                    <input type="file" class="form-control" id="upload_button" ng-model="News_Item.newsimg" placeholder="News Image">
+                                </div>
+                            </div>
+
+                            <div class="progress-bar ng-scope ng-isolate-scope progress-bar-info" ng-class="type &amp;&amp; 'progress-bar-' + type" role="progressbar" aria-valuenow="3" aria-valuemin="0" aria-valuemax="100" ng-style="{width: (percent < 100 ? percent : 100) + '%'}" aria-valuetext="3%" aria-labelledby="progressbar" ng-transclude="" ng-repeat="bar in main.stacked track by $index" value="bar.value" type="info" style="width: 3%;">
+                                <span ng-hide="bar.value < 3" class="ng-binding ng-scope">3%</span>
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <button type="button" class="form-control btn-danger"  ng-click="addNewNews(News_Item)" >Add News</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+    </div>
+
+</div>
+</div>

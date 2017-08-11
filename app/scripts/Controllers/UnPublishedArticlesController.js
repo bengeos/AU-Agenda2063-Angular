@@ -1,8 +1,8 @@
 
 angular
     .module('neophyte')
-    .controller('PublishedArticlesCtrl', function($scope,$timeout,$filter,$state, $rootScope) {
-        console.log("controller loaded");
+    .controller('UnPublishedArticlesCtrl', function($scope,$timeout,$filter,$state,$rootScope, $mdDialog) {
+
         var user = firebase.auth().currentUser;
         if (!user) {
             console.log("Invalid user");
@@ -18,7 +18,7 @@ angular
 
         var database = firebase.database();
         var databaseRef = database.ref();
-        var NewsRef = databaseRef.child("published_articles");
+        var NewsRef = databaseRef.child("unpublished_articles");
         var storage = firebase.storage();
 
         $scope.isAdmin = $rootScope.isAdmin;
@@ -26,10 +26,7 @@ angular
         $scope.image_url = "";
         $scope.News = new Array();
 
-        console.log("userId " + $rootScope.user_id);
-
-        NewsRef.child($rootScope.user_id).on('value', function (snapshot) {
-            $scope.News = new Array();
+        NewsRef.on('value', function (snapshot) {
             $timeout(function () {
                 snapshot.forEach(function(childSnapshot) {
                     var parentKey = childSnapshot.key;
@@ -39,6 +36,29 @@ angular
                 });
             });
         });
+
+        $scope.showConfirm = function(ev, Article) {
+            var confirm = $mdDialog.confirm()
+                .title('Approve this article to be published')
+                .textContent('Are you sure you want to publish this article? If you click yes, the article will be published to be public.')
+                .ariaLabel('Lucky day')
+                .targetEvent(ev)
+                .ok('Yes, publish')
+                .cancel('No,cancel');
+
+            $mdDialog.show(confirm).then(function() {
+                performPublish(Article);
+            }, function() {
+
+            });
+        };
+
+        function performPublish(article){
+
+            databaseRef.child("published_articles").push(article);
+            NewsRef.child(article.ParentID).remove();
+
+        }
 
 
         var uploader = document.getElementById("upload_button");
@@ -79,7 +99,7 @@ angular
                 newNews.newsimg = $scope.image_url;
 
                 console.log("Adding New News: ",newNews);
-                NewsRef.child($rootScope.user_id).push(newNews);
+                NewsRef.push(newNews);
                 progress_bar.value = 0;
                 $scope.News_Item = {};
             }
@@ -90,15 +110,15 @@ angular
 
             console.log("Adding New News: ",newNews);
             if(newNews.newsimg){
-                NewsRef.child($rootScope.user_id).child(newNews.ParentID).set(newNews);
+                NewsRef.child(newNews.ParentID).set(newNews);
             }
-
             $scope.News_Item = {};
         };
 
         $scope.removeNews = function (news) {
-            NewsRef.child($rootScope.user_id).child(news.ParentID).remove();
+            NewsRef.child(news.ParentID).remove();
             $scope.News_Item = {};
+            console.log("Remove Album",news);
         };
 
 
