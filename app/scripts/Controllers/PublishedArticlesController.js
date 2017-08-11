@@ -28,7 +28,7 @@ angular
 
         console.log("userId " + $rootScope.user_id);
 
-        NewsRef.child($rootScope.user_id).on('value', function (snapshot) {
+        NewsRef.on('value', function (snapshot) {
             $scope.News = new Array();
             $timeout(function () {
                 snapshot.forEach(function(childSnapshot) {
@@ -37,9 +37,10 @@ angular
                     childData.ParentID = parentKey;
                     $scope.News.push(childData);
                 });
+
+                console.log("All articles " + $scope.News );
             });
         });
-
 
         var uploader = document.getElementById("upload_button");
         var progress_bar = document.getElementById("progress_bar");
@@ -74,14 +75,28 @@ angular
             //$filter('date')(new Date(), 'dd/MM/yyyy');
             var now_date = new Date().getTime();
 
-            if($scope.image_url){
-                newNews.time = now_date;
-                newNews.newsimg = $scope.image_url;
+            if($scope.isAdmin) {
+                if ($scope.image_url) {
+                    newNews.time = now_date;
+                    newNews.newsimg = $scope.image_url;
 
-                console.log("Adding New News: ",newNews);
-                NewsRef.child($rootScope.user_id).push(newNews);
-                progress_bar.value = 0;
-                $scope.News_Item = {};
+                    console.log("Adding New News: ", newNews);
+                    NewsRef.push(newNews);
+                    progress_bar.value = 0;
+                    $scope.News_Item = {};
+                }
+            }
+
+            else{
+                if ($scope.image_url) {
+                    newNews.time = now_date;
+                    newNews.newsimg = $scope.image_url;
+
+                    console.log("Adding New News: ", newNews);
+                    databaseRef.child("unpublished_articles").push(newNews);
+                    progress_bar.value = 0;
+                    $scope.News_Item = {};
+                }
             }
 
         };
@@ -90,14 +105,14 @@ angular
 
             console.log("Adding New News: ",newNews);
             if(newNews.newsimg){
-                NewsRef.child($rootScope.user_id).child(newNews.ParentID).set(newNews);
+                NewsRef.child(newNews.ParentID).set(newNews);
             }
 
             $scope.News_Item = {};
         };
 
         $scope.removeNews = function (news) {
-            NewsRef.child($rootScope.user_id).child(news.ParentID).remove();
+            NewsRef.child(news.ParentID).remove();
             $scope.News_Item = {};
         };
 

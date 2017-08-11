@@ -3,27 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="4b402614-6724-4529-b3d7-32b26c8b632f" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.tmp/styles/app.css" afterPath="$PROJECT_DIR$/.tmp/styles/app.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.tmp/styles/bootstrap.css" afterPath="$PROJECT_DIR$/.tmp/styles/bootstrap.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.tmp/styles/bootstrap.min.css" afterPath="$PROJECT_DIR$/.tmp/styles/bootstrap.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/index.html" afterPath="$PROJECT_DIR$/app/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/less/md-skin.less" afterPath="$PROJECT_DIR$/app/less/md-skin.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/less/metismenu.less" afterPath="$PROJECT_DIR$/app/less/metismenu.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/npm-debug.log" afterPath="$PROJECT_DIR$/app/npm-debug.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/Controllers/LoginController.js" afterPath="$PROJECT_DIR$/app/scripts/Controllers/LoginController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/Controllers/MentorController.js" afterPath="$PROJECT_DIR$/app/scripts/Controllers/MentorController.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/Controllers/NewsController.js" afterPath="$PROJECT_DIR$/app/scripts/Controllers/NewsController.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/Controllers/PublishedArticlesController.js" afterPath="$PROJECT_DIR$/app/scripts/Controllers/PublishedArticlesController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/config.js" afterPath="$PROJECT_DIR$/app/scripts/config.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/styles/app.css" afterPath="$PROJECT_DIR$/app/styles/app.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/styles/bootstrap.css" afterPath="$PROJECT_DIR$/app/styles/bootstrap.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/styles/bootstrap.min.css" afterPath="$PROJECT_DIR$/app/styles/bootstrap.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/common/navigation.html" afterPath="$PROJECT_DIR$/app/views/common/navigation.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/dialog/aboutDialog.tmpl.html" afterPath="$PROJECT_DIR$/app/views/dialog/aboutDialog.tmpl.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/dialog/contactDialog.tmpl.html" afterPath="$PROJECT_DIR$/app/views/dialog/contactDialog.tmpl.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/login.html" afterPath="$PROJECT_DIR$/app/views/login.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/mentor.html" afterPath="$PROJECT_DIR$/app/views/mentor.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/Controllers/UnPublishedArticlesController.js" afterPath="$PROJECT_DIR$/app/scripts/Controllers/UnPublishedArticlesController.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/news.html" afterPath="$PROJECT_DIR$/app/views/news.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/unPublishedArticles.html" afterPath="$PROJECT_DIR$/app/views/unPublishedArticles.html" />
     </list>
     <ignored path="AU-Agenda2063-Angular.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -58,27 +42,7 @@
         <entry file="file://$PROJECT_DIR$/app/scripts/Controllers/UnPublishedArticlesController.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="23" column="37" selection-start-line="23" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="publishedArticles.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/publishedArticles.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-55.0">
-              <caret line="186" column="59" selection-start-line="186" selection-start-column="59" selection-end-line="186" selection-end-column="59" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LoginController.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/scripts/Controllers/LoginController.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.22112212">
-              <caret line="31" column="38" selection-start-line="31" selection-start-column="38" selection-end-line="31" selection-end-column="38" />
+              <caret line="50" column="27" selection-start-line="50" selection-start-column="27" selection-end-line="50" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -94,11 +58,31 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="LoginController.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/scripts/Controllers/LoginController.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.42079207">
+              <caret line="43" column="17" selection-start-line="43" selection-start-column="17" selection-end-line="43" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="unPublishedArticles.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/unPublishedArticles.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.5384617">
-              <caret line="10" column="73" selection-start-line="10" selection-start-column="73" selection-end-line="10" selection-end-column="73" />
+            <state vertical-scroll-proportion="-1.3076923">
+              <caret line="32" column="71" selection-start-line="32" selection-start-column="71" selection-end-line="32" selection-end-column="71" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NewsController.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/scripts/Controllers/NewsController.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="23" column="44" selection-start-line="23" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -114,18 +98,18 @@
       <list>
         <option value="$PROJECT_DIR$/app/views/login.html" />
         <option value="$PROJECT_DIR$/app/scripts/controllers.js" />
-        <option value="$PROJECT_DIR$/app/views/news.html" />
         <option value="$PROJECT_DIR$/app/views/articles.html" />
-        <option value="$PROJECT_DIR$/app/scripts/Controllers/NewsController.js" />
         <option value="$PROJECT_DIR$/app/scripts/PublishedArticlesController.js" />
         <option value="$PROJECT_DIR$/app/index.html" />
         <option value="$PROJECT_DIR$/app/scripts/config.js" />
-        <option value="$PROJECT_DIR$/app/scripts/Controllers/UnPublishedArticlesController.js" />
-        <option value="$PROJECT_DIR$/app/views/unPublishedArticles.html" />
         <option value="$PROJECT_DIR$/app/views/common/navigation.html" />
         <option value="$PROJECT_DIR$/app/views/publishedArticles.html" />
-        <option value="$PROJECT_DIR$/app/scripts/Controllers/PublishedArticlesController.js" />
         <option value="$PROJECT_DIR$/app/scripts/Controllers/LoginController.js" />
+        <option value="$PROJECT_DIR$/app/scripts/Controllers/PublishedArticlesController.js" />
+        <option value="$PROJECT_DIR$/app/scripts/Controllers/UnPublishedArticlesController.js" />
+        <option value="$PROJECT_DIR$/app/views/unPublishedArticles.html" />
+        <option value="$PROJECT_DIR$/app/scripts/Controllers/NewsController.js" />
+        <option value="$PROJECT_DIR$/app/views/news.html" />
       </list>
     </option>
   </component>
@@ -140,8 +124,7 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1382" />
+    <option name="width" value="1370" />
     <option name="height" value="744" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -361,10 +344,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="0" width="1370" height="744" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24963397" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25184637" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Grunt " active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -464,22 +447,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/news.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.029310346">
-          <caret line="124" column="94" selection-start-line="124" selection-start-column="94" selection-end-line="124" selection-end-column="94" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/Controllers/NewsController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/scripts/PublishedArticlesController.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5511551">
@@ -512,34 +479,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/Controllers/UnPublishedArticlesController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="23" column="37" selection-start-line="23" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/unPublishedArticles.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.5384617">
-          <caret line="10" column="73" selection-start-line="10" selection-start-column="73" selection-end-line="10" selection-end-column="73" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/publishedArticles.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-55.0">
           <caret line="186" column="59" selection-start-line="186" selection-start-column="59" selection-end-line="186" selection-end-column="59" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/Controllers/PublishedArticlesController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6171617">
-          <caret line="34" column="53" selection-start-line="34" selection-start-column="50" selection-end-line="34" selection-end-column="53" />
           <folding />
         </state>
       </provider>
@@ -552,10 +495,50 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/unPublishedArticles.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.3076923">
+          <caret line="32" column="71" selection-start-line="32" selection-start-column="71" selection-end-line="32" selection-end-column="71" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/Controllers/PublishedArticlesController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.5330033">
+          <caret line="76" column="0" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/Controllers/UnPublishedArticlesController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="50" column="27" selection-start-line="50" selection-start-column="27" selection-end-line="50" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/Controllers/NewsController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="23" column="44" selection-start-line="23" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/news.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="3.6086206">
+          <caret line="230" column="39" selection-start-line="230" selection-start-column="39" selection-end-line="230" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/scripts/Controllers/LoginController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.22112212">
-          <caret line="31" column="38" selection-start-line="31" selection-start-column="38" selection-end-line="31" selection-end-column="38" />
+        <state vertical-scroll-proportion="0.42079207">
+          <caret line="43" column="17" selection-start-line="43" selection-start-column="17" selection-end-line="43" selection-end-column="17" />
           <folding />
         </state>
       </provider>

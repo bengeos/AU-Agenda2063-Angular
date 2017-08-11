@@ -1,7 +1,7 @@
 
 angular
     .module('neophyte')
-    .controller('NewsCtrl', function($scope,$timeout,$filter,$state) {
+    .controller('NewsCtrl', function($scope,$timeout,$filter,$state, $rootScope) {
         console.log("controller loaded");
         var user = firebase.auth().currentUser;
         if (!user) {
@@ -20,6 +20,8 @@ angular
         var databaseRef = database.ref();
         var NewsRef = databaseRef.child("News");
         var storage = firebase.storage();
+
+        $scope.isAdmin = $rootScope.isAdmin;
 
         $scope.isAdding = true;
         $scope.image_url = "";

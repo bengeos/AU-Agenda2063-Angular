@@ -55,6 +55,8 @@ angular
 
         function performPublish(article){
 
+            article.ParentID = null;
+            console.log("Articles --- " + article.newstitle);
             databaseRef.child("published_articles").push(article);
             NewsRef.child(article.ParentID).remove();
 
