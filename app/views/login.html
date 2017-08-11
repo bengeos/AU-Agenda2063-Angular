@@ -3,7 +3,8 @@
 
     <md-toolbar style="background: rgba(19, 35, 47, 0.9)">
         <div class="md-toolbar-tools">
-            <span>Neophyte App</span>
+
+            <span>African Thinkers</span>
             <span flex></span>
 
             <a ng-click="showAbout($event)">About us</a>
@@ -27,7 +28,7 @@
         </ul>
 
             <div ng-show="login">
-                <h2>Welcome Neophyte</h2>
+                <h2>Welcome African Youth</h2>
                 <br/>
                 <form>
 
@@ -68,7 +69,7 @@
                         <input placeholder="Password"  ng-model="User.Password" type="Password" required autocomplete="off"/>
                     </div>
 
-                    <md-button class="button button-block" ng-click="SignUpTest(User)"/>Sign up </md-button>
+                    <md-button class="button button-block" ng-click="userSignUp(User)"/>Sign up </md-button>
 
                 </form>
 

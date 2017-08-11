@@ -25,6 +25,12 @@ function config($stateProvider, $urlRouterProvider) {
             controller: 'ProfileCtrl',
             data: { pageTitle: 'Profile' }
         })
+        .state('neophyte.news', {
+            url: "/news",
+            templateUrl: "views/news.html",
+            controller: 'NewsCtrl',
+            data: { pageTitle: 'News' }
+        })
         .state('login', {
             abstract: true,
             url: "/user",

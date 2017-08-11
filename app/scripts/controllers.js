@@ -3,13 +3,14 @@ function MainCtrl() {
 
     // Initialize Firebase
     var config = {
-        apiKey: "AIzaSyC0AY-Sz_QSfkkcQPgJxczAaJh-GoOIPDI",
-        authDomain: "neophyte-sample.firebaseapp.com",
-        databaseURL: "https://neophyte-sample.firebaseio.com",
-        projectId: "neophyte-sample",
-        storageBucket: "neophyte-sample.appspot.com",
-        messagingSenderId: "660363107196"
+        apiKey: "AIzaSyAm_CG2_L_J0jOEk6cIkad4xkaiXuf7gyM",
+        authDomain: "agendaafrica-370bd.firebaseapp.com",
+        databaseURL: "https://agendaafrica-370bd.firebaseio.com",
+        projectId: "agendaafrica-370bd",
+        storageBucket: "agendaafrica-370bd.appspot.com",
+        messagingSenderId: "48863795461"
     };
+
 
     firebase.initializeApp(config);
 

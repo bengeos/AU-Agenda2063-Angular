@@ -19,14 +19,15 @@ angular
                 getUserState(user.uid);
                 $rootScope.user_id = user.uid;
 
-                if($rootScope.isMentee){
-                    $state.go("neophyte.mentor");
+                $state.go("neophyte.mentor");
 
-                }
-                else if ($rootScope.isMentor){
-                    $state.go("neophyte.mentee");
-                }
+               if($rootScope.isAdmin){
+                   $state.go("neophyte.mentor");
 
+               }
+               else if (!$rootScope.isAdmin){
+                   $state.go("neophyte.mentor");
+               }
             }
             else {
                 $state.go("login.signin");
@@ -43,47 +44,21 @@ angular
                 $rootScope.user_name = userData.first_name;
 
 
-                if(userData.mentor){
-                    $rootScope.isMentor = true;
-                    $rootScope.isMentee = false;
+                if(userData.isAdmin){
+                    $rootScope.isAdmin = true;
                 }
                 else{
-                    $rootScope.isMentor = false;
-                    $rootScope.isMentee = true;
-                }
-
-                if(userData.state == 0){
-                    $rootScope.user_stage = "New";
-                    $rootScope.user_stage_id = 0;
-                }
-                else if(userData.state == 1){
-                    $rootScope.user_stage = "Silver";
-                    $rootScope.user_stage_id = 1;
-                }
-
-                else if(userData.state == 2){
-                    $rootScope.user_stage = "Gold";
-                    $rootScope.user_stage_id = 2;
-                }
-
-                else if(userData.state == 3){
-                    $rootScope.user_stage = "Gold";
-                    $rootScope.user_stage_id = 3;
-                }
-
-                else if(userData.state == 4){
-                    $rootScope.user_stage = "Platinum";
-                    $rootScope.user_stage_id = 4;
+                    $rootScope.isAdmin = false;
                 }
 
             }).then(function(){
 
-                if($rootScope.isMentee){
+                if($rootScope.isAdmin){
                     $state.go("neophyte.mentor");
 
                 }
-                else if ($rootScope.isMentor){
-                    $state.go("neophyte.mentee");
+                else if (!$rootScope.isAdmin){
+                    $state.go("neophyte.mentor");
                 }
             });
         }
@@ -94,20 +69,8 @@ angular
         };
 
 
-        $scope.userSignUp = function (Users) {
-            firebase.auth().createUserWithEmailAndPassword(Users.Email, Users.Password).catch(function(error) {
 
-                // Handle Errors here.
-                var errorCode = error.code;
-                var errorMessage = error.message;
-                console.log(errorMessage);
-                // ...
-
-            });
-
-        };
-
-        $scope.SignUpTest = function(User){
+        $scope.userSignUp = function(User){
 
             firebase.auth().createUserWithEmailAndPassword(User.Email, User.Password).then(function(authData){
 
@@ -115,11 +78,7 @@ angular
                         first_name: User.FirstName,
                         last_name: User.LastName,
                         email: User.Email,
-                        mentor: false,
-                        pic_url:"http://demo.walkinsights.com/images/user.cf4d84ae.png",
-                        state: 0,
-                        skills:"Programing",
-                        short_bio: "My Life is awesome"
+                        isAdmin: false
                     });
 
             });
@@ -149,7 +108,6 @@ angular
                 $scope.signup = true;
             }
         };
-
 
 
         $scope.showAbout = function(ev) {
