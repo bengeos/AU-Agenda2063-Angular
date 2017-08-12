@@ -68,14 +68,14 @@ angular
         });
 
 
-        $scope.addNewNews = function (newNews) {
+        $scope.addNewArticle = function (newNews) {
             console.log("Add New News: ",newNews);
 
             //var ts = Math.round((new Date()).getTime() / 1000);
             //$filter('date')(new Date(), 'dd/MM/yyyy');
             var now_date = new Date().getTime();
 
-            if($scope.isAdmin) {
+            if($rootScope.isAdmin) {
                 if ($scope.image_url) {
                     newNews.time = now_date;
                     newNews.newsimg = $scope.image_url;
@@ -104,7 +104,7 @@ angular
         $scope.addEditedNews = function (newNews) {
 
             console.log("Adding New News: ",newNews);
-            if(newNews.newsimg){
+            if(newNews.articleimg){
                 NewsRef.child(newNews.ParentID).set(newNews);
             }
 

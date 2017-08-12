@@ -20,7 +20,7 @@ angular
                 getUserState(user.uid);
                 $rootScope.user_id = user.uid;
 
-                $state.go("neophyte.news");
+                //$state.go("neophyte.news");
 
             }
             else {
@@ -48,6 +48,8 @@ angular
                 }
 
             }).then(function(){
+
+                $state.go("neophyte.news");
 
             });
         }

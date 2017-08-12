@@ -54,10 +54,22 @@ angular
         };
 
         function performPublish(article){
+            var id = article.ParentID;
 
-            article.ParentID = null;
+            var new_article = {
+                "newstitle":article.newstitle,
+                "newsdetail":article.newsdetail,
+                "newsimg":article.newsimg,
+                "publisher":article.publisher,
+                "location":article.location,
+                "time":article.time
+            };
+
             console.log("Articles --- " + article.newstitle);
-            databaseRef.child("published_articles").push(article);
+            console.log(id);
+            databaseRef.child("published_articles").push(new_article);
+
+           //databaseRef.child("published_articles").push(angular.fromJson(angular.toJson(article)));
             NewsRef.child(article.ParentID).remove();
 
         }
